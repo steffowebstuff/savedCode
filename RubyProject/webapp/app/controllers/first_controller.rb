@@ -33,6 +33,7 @@ class FirstController < ApplicationController
 		session[:loggedIn] = true
 		@user = user
 		#redirect_to root_url, :notice => "Logged in!"
+		#test comment
 	  else
 		@loginResult = false
 		flash.now.alert = "Invalid email or password"
