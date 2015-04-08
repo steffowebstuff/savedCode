@@ -1,0 +1,78 @@
+<div class="container">
+	<div class="sizeHelper">
+		<div class="Title">
+			<h1> This is where you create a new minigoal </h1>
+		</div>
+		<% if flash[:notice] %>
+			<h2 class="error"><%= flash[:notice] %></h2>
+			<%= link_to "Back to log in page! ", first_logout_path %>		
+		<% else %>	
+		<% if @minigoal.errors.any? %>
+			<div id="error_messages">
+
+			<ul class = "errorlist">
+			<% @minigoal.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+			</div>
+		<% end %>	
+		<!--<%= @project.id %>-->
+		
+		<br>
+		<br>
+		<% if @validUser == true %>
+			<%= form_for([@project, @minigoal]) do |f| %>
+				<!--<div class="allowedMembers">
+					<h3>The following members have authority to create this minigoal</h3>
+					<% @prusers.each do |pruser| %>
+						<p><%=pruser.first_name %>	<%=pruser.last_name %></p>
+					<%end %>
+				</div>-->
+				<div class="text_field">
+					<%= f.label :name %>
+					<%= f.text_field :name %>
+				</div>
+
+				<!--<div class="text_field">
+					<%= f.label :start %> <p>(YYYY-MM-DD)</p>
+					<%= f.text_field :start %>
+				</div>
+				
+				<div class="text_field">
+					<%= f.label :end %> <p>(YYYY-MM-DD</p>
+					<%= f.text_field :end %>
+				</div>-->
+
+				<div class="select_box">
+					<%= f.label :status_id %>
+					<%= f.select :status_id, options_from_collection_for_select(Status.all, :id, :name) %>	
+				</div>
+
+				<div class="submit">
+					<%= f.submit "Create minigoal" %>
+				</div>
+
+
+			<% end %>
+
+
+			<br>
+
+			<br>
+			<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+				<%= submit_tag("Logout") %>
+			<% end %>
+		<% else %>
+			<p class="error">You should not be here you naughty boy!!!</p>
+		<% end %>
+		<br>
+		<%= link_to "Go to the all users page", users_path %>
+		<% end %>
+
+		<!-- Might be a good idea to put in status in a select box-->		
+	</div>
+	<div class="footer">
+			<p>@steffo 2013<p>
+	</div>
+</div>

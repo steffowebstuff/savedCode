@@ -1,0 +1,51 @@
+<div class="container">
+	<div class="Title">
+		<h1>Edit member</h1>
+	</div>
+	<% if flash[:notice] %>
+			<h2 class="error"><%= flash[:notice] %></h2>
+			<%= link_to "Back to log in page! ", first_logout_path %>		
+	<% else %>
+
+	<%= link_to "Back to users", user_path(@user) %>
+	<!--<p>SessionId: <%= @sessionId %></p>
+	<p>UserId: <%= @userId %></p>-->
+	<% if @sessionId != @userId %>
+		<p>You do not have authority to edit this page!</p>
+	<% else %>	
+	
+		<%= form_for @user do |f| %>
+			<div class="text_field">
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name %>
+			</div>
+			<div class="text_field">
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name %>
+			</div>
+			<div class="text_field">
+				<%= f.label :email %>
+				<%= f.text_field :email %>
+			</div>
+			<div class="text_field">
+				<%= f.label :password %>
+				<%= f.text_field :password %>
+			</div>
+			<div class="submit">
+				<%= f.submit "Save changes" %>
+			</div>
+		
+		<% end %>
+		<% end %>
+		
+		<br>
+		<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+		<!-- Access to action in form_tag check it. -->
+			<%= submit_tag("Logout") %>
+		<% end %>
+	<% end %>
+	<div class="footer">
+		<p>@steffo 2013<p>
+	</div>
+</div>
+<!-- Form goes here -->

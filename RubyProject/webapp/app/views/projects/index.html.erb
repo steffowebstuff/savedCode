@@ -1,0 +1,37 @@
+<div class="container
+<div class="sizeHelper2">
+	<div class="Title">
+		<h1>All projects </h1>
+	</div>
+	<% if flash[:notice] %>
+		<h2 class="error"><%= flash[:notice] %></h2>
+		<%= link_to "Back to log in page! ", first_logout_path %>		
+	<% else %>	
+	<h3> The following projects exist right now</h3>
+	<div class="projects_links">	
+		<table>
+			<% @projects.each do |project| %>
+			<tr>
+			<!--Try to get a link to the projects user within the table as well-->	
+				<td><%= link_to project.name, project %></td>
+				<!--<td><%= link_to "Edit project", edit_project_path(project) %></td>-->
+			</tr>	
+			<%end %>
+		</table>
+	</div>
+	<br>
+	<%= link_to "Create new project", new_project_path %>
+	<br>
+	<%= link_to "Back to the users page", users_path %>
+
+
+	<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+	<!-- Access to action in form_tag check it. -->
+		<%= submit_tag("Logout") %>
+	<%end %>
+	<% end %>
+	</div>
+	<div class="footer">
+		<p>@steffo 2013<p>
+	</div>
+</div>

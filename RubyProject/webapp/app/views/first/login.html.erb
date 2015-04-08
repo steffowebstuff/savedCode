@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="sizeHelper">
+		<div class="Title">
+			<h1>Welcome! <%= @user.first_name%> </h1>
+		</div>
+
+		<%= link_to "See all users in this application", users_path %>
+		<!--  Should go to the users own page instead -->
+		<br>
+		<br>
+		<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+			<%= submit_tag("Logout") %>
+		<% end %>		
+	</div>
+	<div class="footer">
+			<p>@steffo 2013<p>
+	</div>
+</div>
+
+
+
+

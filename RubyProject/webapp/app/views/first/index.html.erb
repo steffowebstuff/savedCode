@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="sizeHelper">
+	<div class="Title"><h1>Steffos Ruby application</h1></div>
+	<!--<%= link_to "Create new user", new_user_path %>-->
+
+
+	<!--<%= link_to "Go to the users page", users_path %>-->
+	<br>
+	<%= form_tag(first_login_path :method => "post", :action => "login", :class => "myForm") do%>
+	<!-- Access to action in form_tag check it. -->
+	
+
+		<%= label_tag(:email, "Email:") %>
+		<%= text_field_tag(:email) %>
+		
+		<%= label_tag(:password, "Password:") %>
+		<%= password_field_tag(:password) %>
+		<br>
+		<br>
+		<%= submit_tag("Login") %>
+		
+	<% end %>
+
+	<%= @sessionLogin %>
+	<%= @sessionId %>
+	
+	<%if @loginResult == false %>
+		<p class="error">Your login failed</p>
+	<% end %>
+
+	<div id="notauser">
+		<p>Not a user?  <%= link_to "Sign up here", new_user_path %><p>
+	</div>
+	</div>
+	<div class="footer">
+		<p>@steffo 2013<p>
+	</div>
+</div>
+

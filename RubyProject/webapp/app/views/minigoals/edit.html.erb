@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="Title">
+		<h1>Edit minigoal</h1>
+	</div>
+	<% if flash[:notice] %>
+		<h2 class="error"><%= flash[:notice] %></h2>
+		<%= link_to "Back to users page |", users_path %><%= link_to "  Back to Minigoals", minigoals_path %>		
+	<% else %>	
+	
+	<% if @validUser == true %>
+		<h3><%= @minigoal.name %></h3>
+		
+
+		<%= form_for @minigoal do |f| %>
+
+			<div class="text_field">
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+			</div>
+
+			<div class="select_box">
+				<%= f.label :status_id %>
+				<%= f.select :status_id, options_from_collection_for_select(Status.all, :id, :name) %>	
+			</div>
+
+			<div class="submit">
+				<%= f.submit "Save changes" %>
+			</div>
+		<% end %>
+		<br>
+		<br>
+		<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+			<%= submit_tag("Logout") %>
+		<% end %>
+		<br>
+		<p><%= link_to "Back to Projects", minigoals_path(@minigoal) %></p>
+		
+	<% else %>
+		<p class="error">Get out of here!!!</p>
+		<br>
+		<%= link_to "Go to the all users page", users_path %>
+		<br>
+		<%= link_to "Back to the projects page", projects_path %>
+	<% end %>
+	<% end %>
+	<br>
+	<br>
+	<%= submit_tag("Logout") %>
+
+	<div class="footer">
+		<p>@steffo 2013<p>
+	</div>
+	<!-- Change this one so you can see the status instead -->
+
+</div>

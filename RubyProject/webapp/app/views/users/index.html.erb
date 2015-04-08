@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="Title">
+		<h1>All users</h1>
+	</div>
+	<% if flash[:notice] %>
+		<h2 class="error"><%= flash[:notice] %></h2>
+		<%= link_to "Back to log in page! ", first_logout_path %>		
+	<% else %>
+	
+	<!-- Link to create new user and to create new project-->
+	<!-- Cant get to the create_users_path controller -->
+	<!--<%= link_to "Create new user", new_user_path %>-->
+	<br>
+	<h3> The following users are registered in this application </h3>
+	<div class="users_links">
+	<br>
+	<table>
+		<% @users.each do |user| %>
+			<tr>
+			<td><%= link_to user.first_name, user %></td>
+			<!-- <td><%= link_to "Edit user", edit_user_path(user) %></td> -->
+			<tr>	
+		<%end %>
+	</table>
+	</div>
+	<br>
+	<%= link_to "Go to the all projects page", projects_path %>
+	<br>
+	<!-- This link leeds to the wrong place -->
+	
+	<br>
+	<br>
+	<br>
+	<div class="searchForm">
+		<%= form_tag(users_search_path :method => "post", :action => "search", :class => "searchForm") do%>
+		<!-- Access to action in form_tag check it. -->
+			<h3> Search among the users of this application </h3>
+			<p>Leave it empty and you will get all of the users</p>
+			<!--<%= label_tag(:search, "Search:") %>-->
+			<%= text_field_tag(:search) %>			
+			<%= submit_tag("Search") %>		
+		<% end %>
+	</div>
+	<br>
+	<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+	<!-- Access to action in form_tag check it. -->
+		<%= submit_tag("Logout") %>
+	<% end %>
+	<% end %>
+	<div class="footer">
+		<p>@steffo 2013<p>
+	</div>
+</div>
+
+

@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="Title">
+		<h1>The results of your search</h1>
+	</div>
+	<h3> Your search phrase was:<%= @searchPhrase %> </h3>
+	
+
+	<p>The number of matches were <%= @size %></p>
+	<p> Here are your search results: </p>
+	<% if @size > 0 %>
+		<div class="users_links">
+		<table>
+			<% @users.each do |user| %>
+				<tr>
+					<td><%= link_to user.first_name, user %></td>	
+					<!-- <td><%= link_to "Edit user", edit_user_path(user) %></td> -->
+				</tr>
+			<%end %>		
+		</table>
+		</div>
+	<% end %>
+	</div>
+	<br>
+	<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+	<!-- Access to action in form_tag check it. -->
+		<%= submit_tag("Logout") %>
+	<% end %>
+	<br>
+	<div class="footer">
+		<p>@steffo 2013<p>
+	</div>
+</div>

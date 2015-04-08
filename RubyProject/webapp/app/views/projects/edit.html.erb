@@ -1,0 +1,89 @@
+<div class = "container">
+	<div class = "Title">
+		<h1>The edit page</h1>
+	</div>
+	<% @sessionId %>
+	<% if flash[:notice] %>
+		<h2 class="error"><%= flash[:notice] %></h2>
+		<%= link_to "Back to log in page! ", first_logout_path %>		
+	<% else %>
+
+
+
+	<br>
+	
+
+	<% if @validUser == true %>
+		<%= form_for @project do |f| %>
+
+			<div class="text_field">
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+			</div>
+			<div class="text_area">
+				<%= f.label :description %>
+				<%= f.text_area :description %>
+			</div>
+			<div class="text_field">
+				<%= f.label :start %>
+				<%= f.text_field :start %>
+			</div>
+
+			<div class="text_field">
+				<%= f.label :end %>
+				<%= f.text_field :end %>
+			</div>
+
+			<h3> Choose who you want to have authority to this project </h3>
+			
+			<% User.all.each do |u| %>	
+			
+				<!--<% @prusers.each do |pruser| %>
+						<%if pruser.id == u.id%>
+							<%= pruser.first_name %>
+							
+						<% end %>
+					<% end %>-->
+			
+				<!--<% if @prusers.include?(u)%>
+				   <%= check_box_tag u.id, 1, true %>
+				<% end %>-->
+			
+				<%if @sessionId == u.id %>
+					<div class="invisible">
+						<%= label_tag u.first_name %>
+						<%= check_box_tag u.id %> <br>
+					</div>
+				<% else %>
+					<% if @prusers.include?(u)%>
+						<%= label_tag u.first_name %>
+						<%= check_box_tag u.id, 1, true %>
+					<% else %>
+						<%= label_tag u.first_name %>
+						<%= check_box_tag u.id %> <br>
+					<% end %>
+				<% end %>
+			
+				<!-- <%= check_box_tag u.id, 1, true %> <br> -->
+			<% end %>
+			<br>
+
+
+			<!-- Should be a select box here where you can chose the minigoal_id -->
+			<div class="submit">
+				<%= f.submit "Save changes" %>
+			</div>		
+		<% end %>
+	<% else %>
+	<p class="error"> You should not be here you naughty boy!!!</p>
+	<% end %>
+
+	<%= link_to "Back to projects", projects_path %>
+	<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+		<%= submit_tag("Logout") %>
+	<% end %>
+	<% end %>
+	<div class="footer">
+		<p>@steffo 2013<p>
+	</div>
+</div>

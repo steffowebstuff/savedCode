@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="Title">
+		<h1> Specific minigoal page </h1>
+	</div>
+	<% if flash[:notice] %>
+		<h2 class="error"><%= flash[:notice] %></h2>
+		<%= link_to "Back to log in page! ", first_logout_path %>		
+	<% else %>	
+
+
+	
+	
+	<p>This minigoal belongs to the project: <%= @projectName.name %></p>
+	<p>Name of the minigoal: <%= @minigoal.name %>
+	<p>Has the status: <%= @status.name %></p>
+
+
+	<p>The owner of this minigoal is: <%= @mgUser.first_name %> <%= @mgUser.last_name %></p>
+	<% if @mgUserId == @sessionUserId %>
+		<p><%= link_to "Edit this minigoal", edit_minigoal_path %></p>
+		<p><%= link_to "Delete this minigoal", @minigoal, confirm: "You're about to delete this minigoal", method: :delete%></p>
+	<%end %>
+	<br>
+	<%= link_to "Go to the all projects page", projects_path %>
+	<br>
+	<%= link_to "Go to the all users page", users_path %>
+	<br>
+	<%= link_to "Back to this projects page", project_path(@projectName) %>
+	<br>
+	<br>
+	<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+		<%= submit_tag("Logout") %>
+	<% end %>
+	<% end %>
+	<div class="footer">
+		<p>@steffo 2013<p>
+	</div>
+</div>

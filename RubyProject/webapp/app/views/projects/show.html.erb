@@ -1,0 +1,68 @@
+<div class="container">	
+	<div class="Title">
+		<h1>Page to show specific Project</h1>
+	</div>
+	<% if flash[:notice] %>
+		<h2 class="error"><%= flash[:notice] %></h2>
+		<%= link_to "Back to log in page! ", first_logout_path %>		
+	<% else %>
+
+	<br>
+
+
+
+	<p>Name of the project: <%= @projectName %></p>
+	<p>Description of the project: <%= @projectDescription %></p
+	<p>Owner of this project: <%= @prowner.first_name %> <%= @prowner.last_name %></p>
+	<h3>Users that belongs to this project</h3>
+	<% @prusers.all.each do |pruser| %>
+		<%= pruser.first_name %>
+		<!--<%if pruser == @validPruser %>
+			<p>valid</p>
+		<% end %>-->
+	<% end %>
+	
+	<!--<% User.all.each do |user| %>
+		<%= user.first_name %>
+		<p>hej</p>
+	<% end %>-->
+		
+
+
+
+
+	<div id ="mgBox">
+		<h3>The minigoals that the project has:</h3>
+		<% if @pMinigoals.size < 1 %>
+			<p> Project has no minigoals </p>
+		<% end %>
+		<table>
+			<% @pMinigoals.each do |pminigoal| %>
+				<tr>
+				<td><%= link_to pminigoal.name, minigoal_path(pminigoal) %></td>
+				<!--<td><%= pminigoal.status_id %></td><!-- Change this one to status name-->
+				<tr>	
+			<%end %>
+		</table>
+	</div>
+	<br>
+	<%if @validUser == true %>
+		<p><%= link_to "Create Minigoal for project", new_project_minigoal_path(@project) %></p>
+	<% end %>
+	
+
+	<% if @userId == @project.owner_id %>
+		<p><%= link_to "Edit this project", edit_project_path %></p>
+		<p><%= link_to "Delete this project", @project, confirm: "You're about to delete this project", method: :delete%></p>
+	<% end %>
+	<p><%=link_to "Create new project", new_project_path %></p>
+	<br>
+	<%= form_tag(first_logout_path :method => "post", :action => "logout", :class => "myLogout") do%>
+	<!-- Access to action in form_tag check it. -->
+		<%= submit_tag("Logout") %>
+	<% end %>
+	<% end %>
+	<div class="footer">
+		<p>@steffo 2013<p>
+	</div>
+</div>
