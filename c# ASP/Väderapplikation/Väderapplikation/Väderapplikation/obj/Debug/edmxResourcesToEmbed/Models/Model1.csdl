@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ss222enProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NewUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="token" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NewWeathers" Relationship="Self.NewWeater_Owner_fk" FromRole="NewUser" ToRole="NewWeather" />
+  </EntityType>
+  <EntityType Name="NewWeather">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="place" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="longitude" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="latitude" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="day1day" Type="DateTime" Precision="0" />
+    <Property Name="day1temp" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="day2day" Type="DateTime" Precision="0" />
+    <Property Name="day2temp" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="day3day" Type="DateTime" Precision="0" />
+    <Property Name="day3temp" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="day4day" Type="DateTime" Precision="0" />
+    <Property Name="day4temp" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="day5day" Type="DateTime" Precision="0" />
+    <Property Name="day5temp" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="owner" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NewUser" Relationship="Self.NewWeater_Owner_fk" FromRole="NewWeather" ToRole="NewUser" />
+  </EntityType>
+  <Association Name="NewWeater_Owner_fk">
+    <End Role="NewUser" Type="Self.NewUser" Multiplicity="1" />
+    <End Role="NewWeather" Type="Self.NewWeather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NewWeather">
+        <PropertyRef Name="owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ss222enProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NewUsers" EntityType="Self.NewUser" />
+    <EntitySet Name="NewWeathers" EntityType="Self.NewWeather" />
+    <AssociationSet Name="NewWeater_Owner_fk" Association="Self.NewWeater_Owner_fk">
+      <End Role="NewUser" EntitySet="NewUsers" />
+      <End Role="NewWeather" EntitySet="NewWeathers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

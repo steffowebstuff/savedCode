@@ -1,0 +1,59 @@
+{% extends 'shared/base.html' %}
+{% block title %}
+				Project applikcation
+{% endblock %}
+{% block content %}
+
+
+<div id="container">
+	<h1 class="title">{{headline}}</h1>
+		<!--{% if perms.myapp.can_add_projects_web %}
+			<a href="{% url project_add %}">Create new project</a>
+		{% endif %}-->
+		<div id="header">
+			<h1> First page </h1>
+		</div>
+		<p> Welcome {{ user.username }} 
+			<p>
+			<a href="{% url project_add %}">Create new project</a>
+			
+			<!--<a href="{% url user_add %}">Create new user</a>
+				{% if perms.myapp.can_add_projects_web %}
+					<a href="{% url project_add %}">Create new project</a>
+				{% endif %}
+			</p>-->
+			<a href="{% url user_list %}">See all users</a></p>
+
+		<div id="main">
+			<h2> The projects so far </h2>
+			
+
+			{% for project in projects %}
+			<div id="project">
+				<h2> {{ project.name }} </h2>
+				<p> Added by user {{ project.added_by_user }} </p> 
+				<p> Started {{ project.start }} </p> 
+				<p> Ended {{ project.end }} </p> 
+				<h3>Project users</h3>
+				{% for pruser in project.projectUsers.all %}
+					<p>projectuser:{{ pruser}} </p>
+				{% endfor %}
+				<p> <a href="{% url project project.id %}"> {{project.name}}</a> </p>
+				{% for minigoal in project.projectMinigoals.all %}
+					<div class="projectminigoal">
+						<h3>{{ minigoal.name}} </h3>
+						<p>status:{{ minigoal.minigoalStatus}} </p>
+					</div>
+				{% endfor %}		
+			</div>
+			{% endfor %}
+			
+			
+		<!--<a href="{% url search %}">Search</a>-->
+			
+		</div>	
+		
+		<h2> {{ user }} </h2>
+		<a href="{% url logout %}">Logout</a>
+	{% endblock %}
+</div>

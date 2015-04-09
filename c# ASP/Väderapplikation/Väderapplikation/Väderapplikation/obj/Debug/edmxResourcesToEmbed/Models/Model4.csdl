@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ss222enProjectModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PlacesExt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="place" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="projectuser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="longitude" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="latitude" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="region" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ss222enProjectEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PlacesExts" EntityType="Self.PlacesExt" />
+    <FunctionImport Name="spDeleteAllPlacesUsername">
+      <Parameter Name="projectuser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spGetAllPlacesExtUsername" ReturnType="Collection(ss222enProjectModel3.spGetAllPlacesExtUsername_Result)">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spGetSpecificPlace" ReturnType="Collection(ss222enProjectModel3.spGetSpecificPlace_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertPlacesExt">
+      <Parameter Name="place" Mode="In" Type="String" />
+      <Parameter Name="longitude" Mode="In" Type="Decimal" />
+      <Parameter Name="latitude" Mode="In" Type="Decimal" />
+      <Parameter Name="projectuser" Mode="In" Type="String" />
+      <Parameter Name="region" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="spGetAllPlacesExtUsername_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="place" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="projectuser" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="longitude" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="latitude" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spGetSpecificPlace_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="place" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="projectuser" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="longitude" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="latitude" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

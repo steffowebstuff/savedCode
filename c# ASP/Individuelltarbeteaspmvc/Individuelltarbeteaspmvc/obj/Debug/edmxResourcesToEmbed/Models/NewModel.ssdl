@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ss222enProjectModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ss222enProjectModelStoreContainer">
+    <EntitySet Name="NewUser" EntityType="ss222enProjectModel.Store.NewUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NewWeather" EntityType="ss222enProjectModel.Store.NewWeather" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="NewWeater_Owner_fk" Association="ss222enProjectModel.Store.NewWeater_Owner_fk">
+      <End Role="NewUser" EntitySet="NewUser" />
+      <End Role="NewWeather" EntitySet="NewWeather" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="NewUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="token" Type="nvarchar" MaxLength="255" />
+    <Property Name="link" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NewWeather">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="place" Type="nvarchar" MaxLength="255" />
+    <Property Name="longitude" Type="decimal" />
+    <Property Name="latitude" Type="decimal" />
+    <Property Name="day1day" Type="date" />
+    <Property Name="day1temp" Type="decimal" />
+    <Property Name="day2day" Type="date" />
+    <Property Name="day2temp" Type="decimal" />
+    <Property Name="day3day" Type="date" />
+    <Property Name="day3temp" Type="decimal" />
+    <Property Name="day4day" Type="date" />
+    <Property Name="day4temp" Type="decimal" />
+    <Property Name="day5day" Type="date" />
+    <Property Name="day5temp" Type="decimal" />
+    <Property Name="owner" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="NewWeater_Owner_fk">
+    <End Role="NewUser" Type="ss222enProjectModel.Store.NewUser" Multiplicity="1" />
+    <End Role="NewWeather" Type="ss222enProjectModel.Store.NewWeather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NewWeather">
+        <PropertyRef Name="owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

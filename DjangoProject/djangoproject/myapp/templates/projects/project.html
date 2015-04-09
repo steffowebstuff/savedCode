@@ -1,0 +1,59 @@
+{% extends 'shared/base.html' %}
+
+
+{% block title %}
+				Project page
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ project.name }}</h1>
+
+<div id="project">
+	{%if project.added_by_user == user %}
+		<p><a href="{% url project_edit project.id %}">Edit project {{ project}}| </a>
+		<a href="{% url project_delete project.id %}">Delete project {{ project}}| </a> 
+	{% endif %}
+	
+	</p>
+	
+	<div class="projectMinigoal">
+	<h3> Minigoals for the project</h3>
+	{% if project.projectMinigoals.count == 0 %}
+		<p>No minigoals</p>
+	{% endif %}
+	
+	 {% for minigoal in project.projectMinigoals.all %}
+
+					<h3>{{ minigoal.name}} </h3>
+					<p>status:{{ minigoal.minigoalStatus}} </p>
+					<p>owner:{{ minigoal.minigoalOwner}} </p>
+					
+					{% if user == minigoal.minigoalOwner %}
+						<a href="{% url minigoal_edit minigoal.id %}">Edit Minigoal {{ minigoal}}| </a> 
+						<a href="{% url minigoal_delete minigoal.id %}">Delete Minigoal {{ minigoal}}| </a> 
+					{% endif %}
+					
+	 {% endfor %}
+	 
+	 <h4> Allowed users for this project </h4>
+	 {% for user in project.projectUsers.all %}
+		<p> {{user.username}} </p>
+	 {% endfor %}
+	 
+	 <h4> Projects owner </h4>
+	 <p> {{project.added_by_user}} </p>
+	 
+	 {% if user in project.projectUsers.all or user == project.added_by_user %}
+		<a href="{% url minigoal_create project.id %}">Create Minigoal {{ project}}| </a> 
+	 {% endif %}
+	</div>
+</div>
+<p> Current user is {{user}} </p>
+<a href="{% url logout %}">Logout</a>
+{% endblock %}
+
+
+
+
+

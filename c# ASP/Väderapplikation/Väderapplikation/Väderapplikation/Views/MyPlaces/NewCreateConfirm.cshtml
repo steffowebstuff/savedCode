@@ -1,0 +1,75 @@
+﻿@model Väderapplikation.Models.ViewModel
+
+@{
+    ViewBag.Title = "CreateConfirm";
+}
+
+<h2>CreateConfirm</h2>
+<h3>Vill du spara den här platsen?</h3>
+
+@using (Html.BeginForm("NewCreate", "MyPlaces"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.place)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.place)
+            @*@Html.TextBoxFor(model => model.place, new { @disabled = "disabled" }) Den här skapar fel om jag försöker med det*@
+            @Html.ValidationMessageFor(model => model.place)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.region)
+        </div>
+        <!--Ersätt med drop down list-->
+        <div id="regionInput" class="editor-field">
+            @Html.EditorFor(model => model.region)
+            @Html.ValidationMessageFor(model => model.region)
+        </div>
+
+        <ul>
+            @foreach (var region in (ViewData["regions"] as List<string>))
+            {
+                <li>
+                     <a class="regionLink" onclick="getRegion(this.text)" href="#">@region</a>
+                </li>
+            }
+        </ul>
+
+        <p>
+            <button>Ja det vill jag</button>
+            <!--<<button type="button" class="btn btn-default btn-lg active">Button</button>-->
+        </p>
+    </fieldset>
+    <div>
+        @Html.ActionLink("Näe jag struntar i vilket väder dom har!", "Index")
+    </div>
+    
+    <script>
+        function getRegion(text) {
+           // alert("test");
+            region.value = text;
+        }
+      /* document.getElementById("place").disabled = true;
+       document.getElementById("region").disabled = true;
+       Den här funktionen kan inte användas om jag vill kunna skicka vidare formuläret till post-metoden.
+       */
+        //Gör om den till när man klikar på a av en viss klass.
+
+       // $(document).on("click", "a", function (e) {
+           // region.value = this.text;
+           // e.preventDefault();
+            
+            
+           /* if (element.classList.contains("regionLink")) {
+                e.preventDefault();
+                region.value = this.text;
+            }*/
+            
+       // });
+    </script>
+}

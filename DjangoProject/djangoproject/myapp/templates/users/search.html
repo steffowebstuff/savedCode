@@ -1,0 +1,27 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}
+				Login page
+{% endblock %}
+
+{% block content %}
+
+	<div id="container">
+		<div id="header">
+			<h1>Your search results</h1>
+		</div>
+	<!--<p>{{ message }}</p>-->
+		<p>{{ emptyMessage }}</p>
+		<p>You had {{ users.count }} search results</p>
+		{% if users.count == 0 %}
+			<p>Your search did not get any results</p>
+			{% endif %}
+
+		{% for user in users.all %}
+					 <!--Check that this is right, and replace it with a link-->
+		<p><a href="{% url user user.id %}"> {{ user.username}} </a></p> 
+		{% endfor %}
+
+		<p><a href="{% url project_list %}">Back to first page</a></p>
+	</div>
+{% endblock %}

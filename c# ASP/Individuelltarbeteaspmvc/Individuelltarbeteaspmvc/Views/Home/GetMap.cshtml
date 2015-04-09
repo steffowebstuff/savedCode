@@ -1,0 +1,229 @@
+﻿@{
+    ViewBag.Title = "GetMap";
+}
+
+@{var weeklength = 5;}
+
+@Html.Partial("MapForm")
+
+<!-- In här kommer namnet på platsen och förmodligen även användaren i ett objekt som ligger i en starkt typad vy -->
+<!-- Allt ska förresten in i den starkt typade vyn, hela objektet, på så sätt kan jag bygga upp tabellen rätt -->
+<!-- Gå sedan vidare med local storage, offline webb applications och autofill-funktionen -->
+
+<!-- Praktisk ordning
+1. Skicka in objektet från create i newweathercontroller till den här actionmetoden, och presentera all information på sidan.
+2. Presentera latitud och longitud i någon div på sidan, plocka sedan upp den informationen och använd till att hämta i google maps api.
+3. Ta tag i dagarna och temperaturerna och presentera dem i den "dynamiska tabellen" i form av razorkod med vägarna till bilderna i imagetaggar (byt gärna namn på bilderna)
+4. Ordna local storage-processen, instruktioner finns längre ner. 
+5. Se till att autofill funktionen i findCity fungerar, hårdkoda om nödvändigt in Sveriges kommuner, och skriv en hjälpfunktion som tar reda på vilket län det tillhör och hur det skrivs
+i geonames api så att strängen kan justeras.
+6. Städa och flytta runt i projetet så att sökningar och vyer leder till rätt ställen.
+7. Titta på offline applications och liknande. 
+//Glöm inte heller databasuppgiften, och se när handledning är tillgänglig.
+-->
+
+
+<input id="mytextbox" name="textbox" type="text" value="@ViewBag.latitude.ToString()"/>
+<input id="mytextbox2" name="textbox" type="text" value="@ViewBag.longitude.ToString()"/>
+
+<!--<p>@ViewBag.latitude.ToString()</p>
+<p>@Model.longitude.ToString()</p>
+<h2>Här är vyn där kartan ska visas.</h2>-->
+
+
+
+
+
+<p>Antagligen kommer jag få ändra den här till en starkt typad vy, se kommentar ovan i koden</p>
+
+<p>Lägg in en lista på tidigare sökningar, fixa även ett script som sparar dem i local storage</p>
+
+<div id="weathertablediv">
+<p>I den här diven ska tabellen visas med bilderna på vädret</p>
+<p>Den ska ersättas med en dynamisk tabell så småningom</p>
+<!-- Placera in img-taggar här med sökvägen till de olika bilderna som finns i projektet-->
+<!-- Börja med att skapa en hjälpfunktion som skickar in temperaturerna, som sedan returnerar en array på namnen på bilderna-->
+
+
+<table border="1">
+    <tr>
+        <th>@Model.day1day.ToString() </th>
+        <th>@Model.day2day.ToString() </th>
+        <th>@Model.day3day.ToString() </th>
+        <th>@Model.day4day.ToString() </th>
+        <th>@Model.day5day.ToString() </th>
+    </tr>
+   <!-- <tr>
+            @for (var i = 0; i < weeklength; i++) 
+             {
+                
+                <td>                                            
+                         <img src="../../../Content/themes/base/images/snow.png" alt="snö" height="42" width="42">                       
+                 </td>
+
+             }
+    </tr>-->
+    
+    <tr>
+        <td>@Model.day1temp.ToString() grader</td>
+        <td>@Model.day2temp.ToString() grader</td>
+        <td>@Model.day3temp.ToString() grader</td>
+        <td>@Model.day4temp.ToString() grader</td>
+        <td>@Model.day5temp.ToString() grader</td>
+    </tr>
+    <tr>
+    <!-- Byt nu ut den här mot en dynamisk variant -->
+    @if (Model.day1temp > 20)
+            {
+             <td><img src="~/Content/themes.base.images.sun.jpeg" alt="en sol"></td>
+            }
+    else if (Model.day1temp < 20 && Model.day1temp > 5)
+    {
+            <td><img src="../../../Content/themes/base/images/rain.png" alt="regn" height="42" width="42"> </td>
+    }
+    else 
+    { 
+        <td><img src="../../../Content/themes/base/images/snow.png" alt="snö" height="42" width="42"> </td>
+    }
+        
+
+    @if (Model.day2temp > 20)
+            {
+             <td><img src="~/Content/themes.base.images.sun.jpeg" alt="en sol"></td>
+            }
+    else if (Model.day2temp < 20 && Model.day2temp > 5)
+    {
+            <td><img src="../../../Content/themes/base/images/rain.png" alt="regn" height="42" width="42"> </td>
+    }
+    else 
+    { 
+        <td><img src="../../../Content/themes/base/images/snow.png" alt="snö" height="42" width="42"> </td>
+    }
+
+     @if (Model.day3temp > 20)
+            {
+             <td><img src="~/Content/themes.base.images.sun.jpeg" alt="en sol"></td>
+            }
+    else if (Model.day3temp < 20 && Model.day2temp > 5)
+    {
+            <td><img src="../../../Content/themes/base/images/rain.png" alt="regn" height="42" width="42"> </td>
+    }
+    else 
+    { 
+        <td><img src="../../../Content/themes/base/images/snow.png" alt="snö" height="42" width="42"> </td>
+    }
+
+     @if (Model.day4temp > 20)
+            {
+             <td><img src="~/Content/themes.base.images.sun.jpeg" alt="en sol"></td>
+            }
+    else if (Model.day4temp < 20 && Model.day2temp > 5)
+    {
+            <td><img src="../../../Content/themes/base/images/rain.png" alt="regn" height="42" width="42"> </td>
+    }
+    else 
+    { 
+        <td><img src="../../../Content/themes/base/images/snow.png" alt="snö" height="42" width="42"> </td>
+    }
+
+     @if (Model.day5temp > 20)
+            {
+             <td><img src="~/Content/themes.base.images.sun.jpeg" alt="en sol"></td>
+            }
+    else if (Model.day5temp < 20 && Model.day2temp > 5)
+    {
+            <td><img src="../../../Content/themes/base/images/rain.png" alt="regn" height="42" width="42"> </td>
+    }
+    else 
+    { 
+        <td><img src="../../../Content/themes/base/images/snow.png" alt="snö" height="42" width="42"> </td>
+    }
+       
+    </tr>
+</table> 
+</div>
+
+<div id="mapdiv"  style="width:400px;height:400px;">
+ <p>Kartan visas över platsen som användaren har valt</p>
+</div>
+
+
+
+@Html.ActionLink("Sök ny plats", "PlaceInput")
+@Html.ActionLink("Visa fler sökningar som du har gjort", "PlaceInput")
+<p>Den här länken ska gå till en actionmetod som hämtar alla sökningarna från användaren, baserat på användarid</p>
+<p>Länkar ska dyka upp som genererar id'n, där man kan ta bort, och välja varje plats som man valt</p>
+
+@Html.ActionLink("Spara sökningen?", "PlaceInput")
+<p>Den här länken ska gå till en actionmetod som sätter in informationen i databasen, ska även vara kopplad till local storage</p>
+
+
+<script>
+
+//Sätt igång en loop som placerar in sökningen i localstorage, värdet ska vara platsen som sökts och nyckeln ska vara användarens username plus siffran.
+//Förhoppningsvis går det att använda en array till det här. 
+        
+
+        function initialize()
+        {
+
+        var textbox = document.getElementById("mytextbox");
+        var myvalue = textbox.value;
+        var mynewvalue = myvalue.replace(/,/g, '.')
+
+        var textbox2 = document.getElementById("mytextbox2");
+        var myvalue2 = textbox2.value;
+        var mynewvalue2 = myvalue2.replace(/,/g, '.');
+        //var myCenter=new google.maps.LatLng(51.508742,-0.120850); //Hur anropet till google maps ser ut. Ersätt här med latitude och longitude. 
+        //Man bör här ha tillgång till platsens namn redan i vyn, så att den kan skickas som parameter genom ajaxanropet. 
+        //Ajaxanropet, se till att ha jQuery installerat för att det ska kunna fungera.
+        //Anropet bör hämta från en c#-kod som i sin tur hämtar från databasen. 
+        //In till initialize-metoden bör coordinaterna redan komma från xml-diagrammet.
+        //Följ den här instruktionen: http://weblogs.asp.net/gunnarpeipman/archive/2010/07/26/how-to-make-ajax-requests-to-asp-net-mvc-application-using-jquery.aspx
+        //var url = '/contacts/ListPartiesByNameStart?nameStart=A';
+        //$.ajax({ url: url, success: DataRetrieved, type: 'POST', dataType: 'json' });
+        //Du bör ta emot informationen i json
+       /*
+        $.ajax({  type: "GET",
+			url: "http://localhost:49410/Home/AjaxGetObjectInfo?placeName=place",  
+			})  
+			.done(function( msg ) 
+			{  
+                //msg som returneras in, ska innehålla koordinaterna. 
+            }
+         
+         */
+
+        var myCenter=new google.maps.LatLng(mynewvalue,mynewvalue2);
+
+        var mapProp = {
+          center:myCenter,
+          zoom:5,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+
+        var map=new google.maps.Map(document.getElementById("mapdiv"),mapProp);
+
+        var marker=new google.maps.Marker({
+          position:myCenter,
+          });
+
+        marker.setMap(map);
+        }
+        //Local storage går igång redan vid första postningen och fylls sedan på vid varje nu hämtning.
+        //Skriptet går så länge man befinner sig på sidan. Varje gång användaren trycker på sök-knappen så hamnar sökningen i local storage.
+        //Värdet är innehållet i sökrutan, nyckeln är ett nummer. Se om attributet length finns som gör att man kan hämta längden på local storage innan man sätter värdet.
+        //Vid varje laddning av sidan hämtar scriptet ut allt innehåll som man har lagt i local storage och lägger det i en länklista bredvid kartan.
+        //Det ska även finnas en clearknapp som rensar local storage. 
+
+</script>
+
+<!--Bildvägar<tr>
+        <td><img src="../../../Content/themes/base/images/sun.png" alt="sol" height="42" width="42"> </td>
+        <td><img src="../../../Content/themes/base/images/rain.png" alt="regn" height="42" width="42"> </td>
+        <td><img src="../../../Content/themes/base/images/snow.png" alt="snö" height="42" width="42"> </td>
+        <td><img src="../../../Content/themes/base/images/cloudy.png" alt="moln" height="42" width="42"> </td>
+        <td><img src="../../../Content/themes/base/images/toohot.png" alt="för varmt" height="42" width="42"> </td>
+</tr> Bilderna och vägarna fungerar som de ska-->
+
+

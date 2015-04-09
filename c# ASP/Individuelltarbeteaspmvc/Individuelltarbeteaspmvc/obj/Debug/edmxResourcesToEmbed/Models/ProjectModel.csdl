@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ss222enProjectEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Model.User" />
+    <EntitySet Name="Weathers" EntityType="Model.Weather" />
+    <AssociationSet Name="Weather_OwnerNew_fk" Association="Model.Weather_OwnerNew_fk">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Weather" EntitySet="Weathers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="token" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="link" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Weathers" Relationship="Model.Weather_OwnerNew_fk" FromRole="User" ToRole="Weather" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="place" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="longitude" Type="Int32" />
+    <Property Name="latitude" Type="Int32" />
+    <Property Name="day1day" Type="DateTime" />
+    <Property Name="day1temp" Type="Int32" />
+    <Property Name="day2day" Type="DateTime" />
+    <Property Name="day2temp" Type="Int32" />
+    <Property Name="day3day" Type="DateTime" />
+    <Property Name="day3temp" Type="Int32" />
+    <Property Name="day4day" Type="DateTime" />
+    <Property Name="day4temp" Type="Int32" />
+    <Property Name="day5day" Type="DateTime" />
+    <Property Name="day5temp" Type="Int32" />
+    <Property Name="owner" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Model.Weather_OwnerNew_fk" FromRole="Weather" ToRole="User" />
+  </EntityType>
+  <Association Name="Weather_OwnerNew_fk">
+    <End Role="User" Type="Model.User" Multiplicity="1" />
+    <End Role="Weather" Type="Model.Weather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Weather">
+        <PropertyRef Name="owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

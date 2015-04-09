@@ -1,0 +1,20 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>
+			{% block title %}
+				Project applikcation
+			{% endblock %}
+			
+		</title>
+		{% block stylesheet%}
+					<link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" media="screen">
+					<link href="{{STATIC_URL}}css/myStyle.css" rel="stylesheet">
+		{% endblock %}
+	</head>
+	<body>
+			{% block content %}
+				<h1> Testing base class </h1>
+			{% endblock %}		
+	</body>	
+</html>

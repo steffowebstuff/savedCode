@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ss222enProjectModel1StoreContainer" CdmEntityContainer="ss222enProjectEntities1">
+    <EntitySetMapping Name="MyWeathers">
+      <EntityTypeMapping TypeName="ss222enProjectModel1.MyWeather">
+        <MappingFragment StoreEntitySet="MyWeather">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="projectuser" ColumnName="projectuser" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="day1day" ColumnName="day1day" />
+          <ScalarProperty Name="day1temp" ColumnName="day1temp" />
+          <ScalarProperty Name="day2day" ColumnName="day2day" />
+          <ScalarProperty Name="day2temp" ColumnName="day2temp" />
+          <ScalarProperty Name="day3day" ColumnName="day3day" />
+          <ScalarProperty Name="day3temp" ColumnName="day3temp" />
+          <ScalarProperty Name="day4day" ColumnName="day4day" />
+          <ScalarProperty Name="day4temp" ColumnName="day4temp" />
+          <ScalarProperty Name="day5day" ColumnName="day5day" />
+          <ScalarProperty Name="day5temp" ColumnName="day5temp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,50 @@
+﻿@model Väderapplikation.Models.MyPlace
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>MyPlace</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.place)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.place)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.projectuser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.projectuser)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.longitude)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.longitude)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.latitude)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.latitude)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.region)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.region)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

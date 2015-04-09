@@ -1,0 +1,62 @@
+﻿@model Väderapplikation.Models.NewWeather
+
+@{
+    ViewBag.Title = "GetNewWeatherMap";
+}
+
+<h2>GetNewWeatherMap</h2>
+
+
+<p>@ViewBag.latitude</p>
+<p>Testar longitude</p>
+<p>@Model.longitude.ToString();</p>
+
+
+
+
+
+
+<h2>GetNewWeatherMap</h2>
+<div>
+    <table border="1">
+        <tr>
+            <th>@Html.DisplayFor(model => model.day1day)</th>
+            <th>Dag 2</th>
+            <th>Dag 3</th>
+            <th>Dag 4</th>
+            <th>Dag 5</th>
+        </tr>
+
+
+        <tr>
+            @if (Model.day1temp > 20)
+            {
+                <td><img src="~/Content/themes.base.images.sun.jpeg" alt="en sol"></td>
+            }
+            else
+            {
+                <td><img src="~/Content/themes.base.images.sun.jpeg" alt="ett moln"></td>
+            }
+            <td>Bild på väder</td>
+            <td>Bild på väder</td>
+            <td>Bild på väder</td>
+            <td>Bild på väder</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.day1temp)</td>
+            <td>Temperatur</td>
+            <td>Temperatur</td>
+            <td>Temperatur</td>
+            <td>Temperatur</td>
+        </tr>
+    </table>
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.place)
+    @Html.DisplayFor(model => model.place)
+    @Html.DisplayFor(model => model.longitude)
+    @Html.DisplayFor(model => model.latitude)
+
+</div>
+

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ss222enProjectModel4StoreContainer" CdmEntityContainer="ss222enProjectEntities6">
+    <EntitySetMapping Name="MyPlaces">
+      <EntityTypeMapping TypeName="ss222enProjectModel4.MyPlace">
+        <MappingFragment StoreEntitySet="MyPlaces">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="projectuser" ColumnName="projectuser" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="region" ColumnName="region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

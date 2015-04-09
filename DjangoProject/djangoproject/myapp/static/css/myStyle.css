@@ -1,0 +1,42 @@
+
+
+#searchform{
+		background: white;
+		border: 1px solid black;
+}
+
+#main{
+		background: white;
+		border: 3px solid black;
+}
+
+#project{
+		background: #F8F8F8 ;
+		border: 1px solid black;
+}
+
+#user{
+		background: #F8F8F8;
+		border: 1px solid black;
+}
+
+#container{
+		width: 1000px;
+		margin: auto;
+}
+
+#header{
+		background:black;
+		color:white;
+}
+
+.projectMinigoal{
+		background: #F0F0F0;
+		border: 1px dotted grey;
+}
+
+.userProject{
+		background: #F0F0F0;
+		border: 1px dotted grey;
+}
+

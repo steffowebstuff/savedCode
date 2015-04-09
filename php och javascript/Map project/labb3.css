@@ -1,0 +1,154 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+
+input{
+	float:left;
+}
+
+form{
+	/*width:250px;*/
+}
+
+.popupDiv{
+	background: red;
+}
+
+.hidden{
+	display:none;
+}
+
+.visible{
+	visibility:visible;
+}
+
+.listemt{
+	float:left;
+	list-style:none;
+	margin:10px;
+}
+
+.listemt a{
+}
+
+
+#popup{
+	/*height:500;*/
+	width:75%;
+	background: silver;
+	border:1px solid black;
+	float:none;
+	margin:10px;
+	height: 300px;
+}
+
+#map{
+	height:20%;
+	width:30%;
+	min-height: 160px;
+	min-width: 210px;
+	/*float:right;*/
+}
+
+
+#menu{
+	float:left;
+	width:100%;
+	background:black;
+	font-family:Arial,sans-serif;
+	line-height:30px;
+	text-align:center;
+}
+
+
+#menu ul li{
+	float:left;
+	list-style:none;
+	background:grey;
+	margin-right:2%;
+	padding:1%;
+	width:20%;
+	max-width:100px;
+	/*width:100px;*/
+}
+
+#menu ul li a{
+	color:white;
+	text-decoration:none;
+	
+}
+
+#menu form{
+	float:right;
+}
+
+#main {
+}
+
+#main img{
+	float:right;
+	height: 150px;
+	width: 150px;
+}
+
+
+#container{
+	/*width: 1200px;*/
+	width: 100%;
+}
+
+.producer{
+	height: 150px;
+	width: 150px;
+	float:left;
+	background:silver;
+	margin: 10px;
+
+}
+
+.producerImg{
+	height:50px;
+	width: 100px;
+	
+}
+
+#producers{
+	width: 70%;
+	max-width:550px;
+	min-height:400px;
+	/*float:left;
+	border: 1px solid black;*/
+	display: inline-block;
+}
+
+
+#moreProducers{
+	width: 50%;
+	min-height:200px;
+	/*border: 1px solid black;
+	display: inline-block;*/
+}
+
+	
+
+@media handheld{
+	
+	#main{
+		background: red;
+	}
+}
+
+
+
+@media only screen and (max-device-width: 480px) {
+    body {
+    	
+    	 max-width: 100%; 
+    	 background:red;
+    	 }
+    #main{
+    	background:red;
+    }	 
+    
+}

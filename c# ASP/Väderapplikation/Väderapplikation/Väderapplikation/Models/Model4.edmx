@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ss222enProjectModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PlacesExt">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="place" Type="nvarchar" MaxLength="250" />
+          <Property Name="projectuser" Type="nvarchar" MaxLength="100" />
+          <Property Name="longitude" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="latitude" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="region" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Function Name="spDeleteAllPlacesUsername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="projectuser" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spGetAllPlacesExtUsername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetSpecificPlace" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spInsertPlacesExt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="place" Type="varchar" Mode="In" />
+          <Parameter Name="longitude" Type="decimal" Mode="In" />
+          <Parameter Name="latitude" Type="decimal" Mode="In" />
+          <Parameter Name="projectuser" Type="varchar" Mode="In" />
+          <Parameter Name="region" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="ss222enProjectModel3StoreContainer">
+          <EntitySet Name="PlacesExt" EntityType="Self.PlacesExt" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ss222enProjectModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PlacesExt">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="place" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="projectuser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="longitude" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="latitude" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="region" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ss222enProjectEntities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PlacesExts" EntityType="Self.PlacesExt" />
+          <FunctionImport Name="spDeleteAllPlacesUsername">
+            <Parameter Name="projectuser" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetAllPlacesExtUsername" ReturnType="Collection(ss222enProjectModel3.spGetAllPlacesExtUsername_Result)">
+            <Parameter Name="username" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetSpecificPlace" ReturnType="Collection(ss222enProjectModel3.spGetSpecificPlace_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertPlacesExt">
+            <Parameter Name="place" Mode="In" Type="String" />
+            <Parameter Name="longitude" Mode="In" Type="Decimal" />
+            <Parameter Name="latitude" Mode="In" Type="Decimal" />
+            <Parameter Name="projectuser" Mode="In" Type="String" />
+            <Parameter Name="region" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spGetAllPlacesExtUsername_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="place" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="projectuser" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="longitude" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="latitude" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="region" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="spGetSpecificPlace_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="place" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="projectuser" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="longitude" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="latitude" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="region" Nullable="true" MaxLength="100" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ss222enProjectModel3StoreContainer" CdmEntityContainer="ss222enProjectEntities5">
+          <EntitySetMapping Name="PlacesExts">
+            <EntityTypeMapping TypeName="ss222enProjectModel3.PlacesExt">
+              <MappingFragment StoreEntitySet="PlacesExt">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="projectuser" ColumnName="projectuser" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="region" ColumnName="region" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spDeleteAllPlacesUsername" FunctionName="ss222enProjectModel3.Store.spDeleteAllPlacesUsername" />
+          <FunctionImportMapping FunctionImportName="spGetAllPlacesExtUsername" FunctionName="ss222enProjectModel3.Store.spGetAllPlacesExtUsername">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ss222enProjectModel3.spGetAllPlacesExtUsername_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="projectuser" ColumnName="projectuser" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="region" ColumnName="region" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetSpecificPlace" FunctionName="ss222enProjectModel3.Store.spGetSpecificPlace">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ss222enProjectModel3.spGetSpecificPlace_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="projectuser" ColumnName="projectuser" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="region" ColumnName="region" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spInsertPlacesExt" FunctionName="ss222enProjectModel3.Store.spInsertPlacesExt" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

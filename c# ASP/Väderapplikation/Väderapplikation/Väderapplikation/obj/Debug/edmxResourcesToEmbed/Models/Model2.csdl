@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ss222enProjectModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MyWeather">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="place" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="projectuser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="longitude" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="latitude" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="day1day" Type="DateTime" Precision="3" />
+    <Property Name="day1temp" Type="Int32" />
+    <Property Name="day2day" Type="DateTime" Precision="3" />
+    <Property Name="day2temp" Type="Int32" />
+    <Property Name="day3day" Type="DateTime" Precision="3" />
+    <Property Name="day3temp" Type="Int32" />
+    <Property Name="day4day" Type="DateTime" Precision="3" />
+    <Property Name="day4temp" Type="Int32" />
+    <Property Name="day5day" Type="DateTime" Precision="3" />
+    <Property Name="day5temp" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="ss222enProjectEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MyWeathers" EntityType="Self.MyWeather" />
+  </EntityContainer>
+</Schema>

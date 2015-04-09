@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ss222enProjectEntities1">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="link" ColumnName="link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Weathers">
+      <EntityTypeMapping TypeName="Model.Weather">
+        <MappingFragment StoreEntitySet="Weather">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="day1day" ColumnName="day1day" />
+          <ScalarProperty Name="day1temp" ColumnName="day1temp" />
+          <ScalarProperty Name="day2day" ColumnName="day2day" />
+          <ScalarProperty Name="day2temp" ColumnName="day2temp" />
+          <ScalarProperty Name="day3day" ColumnName="day3day" />
+          <ScalarProperty Name="day3temp" ColumnName="day3temp" />
+          <ScalarProperty Name="day4day" ColumnName="day4day" />
+          <ScalarProperty Name="day4temp" ColumnName="day4temp" />
+          <ScalarProperty Name="day5day" ColumnName="day5day" />
+          <ScalarProperty Name="day5temp" ColumnName="day5temp" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

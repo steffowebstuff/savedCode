@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ss222enProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NewUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="token" Type="nvarchar" MaxLength="255" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="NewWeather">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="place" Type="nvarchar" MaxLength="255" />
+          <Property Name="longitude" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="latitude" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="day1day" Type="date" />
+          <Property Name="day1temp" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="day2day" Type="date" />
+          <Property Name="day2temp" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="day3day" Type="date" />
+          <Property Name="day3temp" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="day4day" Type="date" />
+          <Property Name="day4temp" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="day5day" Type="date" />
+          <Property Name="day5temp" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="owner" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="NewWeater_Owner_fk">
+          <End Role="NewUser" Type="Self.NewUser" Multiplicity="1" />
+          <End Role="NewWeather" Type="Self.NewWeather" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewUser">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NewWeather">
+              <PropertyRef Name="owner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ss222enProjectModelStoreContainer">
+          <EntitySet Name="NewUser" EntityType="Self.NewUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewWeather" EntityType="Self.NewWeather" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="NewWeater_Owner_fk" Association="Self.NewWeater_Owner_fk">
+            <End Role="NewUser" EntitySet="NewUser" />
+            <End Role="NewWeather" EntitySet="NewWeather" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ss222enProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NewUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="token" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NewWeathers" Relationship="Self.NewWeater_Owner_fk" FromRole="NewUser" ToRole="NewWeather" />
+        </EntityType>
+        <EntityType Name="NewWeather">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="place" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="longitude" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="latitude" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="day1day" Type="DateTime" Precision="0" />
+          <Property Name="day1temp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="day2day" Type="DateTime" Precision="0" />
+          <Property Name="day2temp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="day3day" Type="DateTime" Precision="0" />
+          <Property Name="day3temp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="day4day" Type="DateTime" Precision="0" />
+          <Property Name="day4temp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="day5day" Type="DateTime" Precision="0" />
+          <Property Name="day5temp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="owner" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NewUser" Relationship="Self.NewWeater_Owner_fk" FromRole="NewWeather" ToRole="NewUser" />
+        </EntityType>
+        <Association Name="NewWeater_Owner_fk">
+          <End Role="NewUser" Type="Self.NewUser" Multiplicity="1" />
+          <End Role="NewWeather" Type="Self.NewWeather" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewUser">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NewWeather">
+              <PropertyRef Name="owner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ss222enProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NewUsers" EntityType="Self.NewUser" />
+          <EntitySet Name="NewWeathers" EntityType="Self.NewWeather" />
+          <AssociationSet Name="NewWeater_Owner_fk" Association="Self.NewWeater_Owner_fk">
+            <End Role="NewUser" EntitySet="NewUsers" />
+            <End Role="NewWeather" EntitySet="NewWeathers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ss222enProjectModelStoreContainer" CdmEntityContainer="ss222enProjectEntities">
+          <EntitySetMapping Name="NewUsers">
+            <EntityTypeMapping TypeName="ss222enProjectModel.NewUser">
+              <MappingFragment StoreEntitySet="NewUser">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="token" ColumnName="token" />
+                <ScalarProperty Name="link" ColumnName="link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewWeathers">
+            <EntityTypeMapping TypeName="ss222enProjectModel.NewWeather">
+              <MappingFragment StoreEntitySet="NewWeather">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="day1day" ColumnName="day1day" />
+                <ScalarProperty Name="day1temp" ColumnName="day1temp" />
+                <ScalarProperty Name="day2day" ColumnName="day2day" />
+                <ScalarProperty Name="day2temp" ColumnName="day2temp" />
+                <ScalarProperty Name="day3day" ColumnName="day3day" />
+                <ScalarProperty Name="day3temp" ColumnName="day3temp" />
+                <ScalarProperty Name="day4day" ColumnName="day4day" />
+                <ScalarProperty Name="day4temp" ColumnName="day4temp" />
+                <ScalarProperty Name="day5day" ColumnName="day5day" />
+                <ScalarProperty Name="day5temp" ColumnName="day5temp" />
+                <ScalarProperty Name="owner" ColumnName="owner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

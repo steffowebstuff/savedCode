@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="uppgift2.xsl"?>
+
+<Handlare>
+  <HandlareNr>
+    <id>8</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_8.html</linkedPage>
+    <logoUrl>images/ema.png</logoUrl>
+    <name>EmÃ¥mejeriet</name>
+    <adress> Grenvägen 1-3</adress>
+    <zipCode> 577 39</zipCode>
+    <town> Hultsfred</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>57</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_57.html</linkedPage>
+    <logoUrl>images/7.jpeg</logoUrl>
+    <name>Ãlands Ã¶rtagÃ¥rd</name>
+    <adress> Stora Frö 2393 </adress>
+    <zipCode> 380 62</zipCode>
+    <town> Mörbylånga</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>45</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_45.html</linkedPage>
+    <logoUrl>images/Dovestad_Gardsbutik.jpeg</logoUrl>
+    <name>DÃ¶vestads utegrisar </name>
+    <adress> Frälsegård </adress>
+    <zipCode> 572 91</zipCode>
+    <town> Oskarshamn</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>33</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_33.html</linkedPage>
+    <logoUrl>images/yngden_Logo.bmp</logoUrl>
+    <name>YngdÃ©ns KnÃ¤cke</name>
+    <adress> Björkvägen 12</adress>
+    <zipCode> 387 35</zipCode>
+    <town> Borgholm</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>16</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_16.html</linkedPage>
+    <logoUrl>images/16109.png</logoUrl>
+    <name>Stenvide</name>
+    <adress> Böke 113</adress>
+    <zipCode> 385 97</zipCode>
+    <town> Söderåkra</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>41</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_41.html</linkedPage>
+    <logoUrl>images/IMG_9157.jpg</logoUrl>
+    <name>Hagelstads GÃ¥rdsmejeri</name>
+    <adress> Hagelstad Södra bygatan 17</adress>
+    <zipCode> 387 70</zipCode>
+    <town> Löttorp</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>38</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_38.html</linkedPage>
+    <logoUrl>images/91721_1_1.jpg</logoUrl>
+    <name>Solmarka Bageri</name>
+    <adress> Arby 207 </adress>
+    <zipCode> 388 94</zipCode>
+    <town> Vassmolösa</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>40</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_40.html</linkedPage>
+    <logoUrl>images/arrangemang_widescreen.jpg</logoUrl>
+    <name>Nabbens RÃ¶keri</name>
+    <adress> Fiskarv. 2</adress>
+    <zipCode> 38052</zipCode>
+    <town> TIMMERNABBEN</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>56</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_56.html</linkedPage>
+    <logoUrl>Ingen bild kunde hittas</logoUrl>
+    <name>Bredaviks ÃrtagÃ¥rd</name>
+    <adress> Gamla vägen 1</adress>
+    <zipCode> 37043</zipCode>
+    <town> Sturkö</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>24</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_24.html</linkedPage>
+    <logoUrl>Ingen bild kunde hittas</logoUrl>
+    <name>Johans KÃ¶k</name>
+    <adress> Verkstadsgatan 41</adress>
+    <zipCode> 392 39</zipCode>
+    <town> Kalmar</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>19</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_19.html</linkedPage>
+    <logoUrl>images/Logga-MSAB.gif</logoUrl>
+    <name>Moheda Sylt AB</name>
+    <adress> Svensgårde</adress>
+    <zipCode> 42643</zipCode>
+    <town> Moheda</town>
+  </HandlareNr>
+  <HandlareNr>
+    <id>36</id>
+    <linkedPage>http://172.16.206.1/~thajo/1DV449/laboration01/producenter/producent_36.html</linkedPage>
+    <logoUrl>images/vinager.jpg</logoUrl>
+    <name>HavtornsgÃ¥rden, StrandÃ¥ ekologiska odlingar</name>
+    <adress> Triberga 114</adress>
+    <zipCode> 38062</zipCode>
+    <town> Mörbylånga</town>
+  </HandlareNr>
+</Handlare>

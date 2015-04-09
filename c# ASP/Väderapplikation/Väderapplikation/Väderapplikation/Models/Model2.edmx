@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ss222enProjectModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MyWeather">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="place" Type="nvarchar" MaxLength="255" />
+          <Property Name="projectuser" Type="nvarchar" MaxLength="100" />
+          <Property Name="longitude" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="latitude" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="day1day" Type="datetime" />
+          <Property Name="day1temp" Type="int" />
+          <Property Name="day2day" Type="datetime" />
+          <Property Name="day2temp" Type="int" />
+          <Property Name="day3day" Type="datetime" />
+          <Property Name="day3temp" Type="int" />
+          <Property Name="day4day" Type="datetime" />
+          <Property Name="day4temp" Type="int" />
+          <Property Name="day5day" Type="datetime" />
+          <Property Name="day5temp" Type="int" />
+        </EntityType>
+        <EntityContainer Name="ss222enProjectModel1StoreContainer">
+          <EntitySet Name="MyWeather" EntityType="Self.MyWeather" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ss222enProjectModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MyWeather">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="place" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="projectuser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="longitude" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="latitude" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="day1day" Type="DateTime" Precision="3" />
+          <Property Name="day1temp" Type="Int32" />
+          <Property Name="day2day" Type="DateTime" Precision="3" />
+          <Property Name="day2temp" Type="Int32" />
+          <Property Name="day3day" Type="DateTime" Precision="3" />
+          <Property Name="day3temp" Type="Int32" />
+          <Property Name="day4day" Type="DateTime" Precision="3" />
+          <Property Name="day4temp" Type="Int32" />
+          <Property Name="day5day" Type="DateTime" Precision="3" />
+          <Property Name="day5temp" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="ss222enProjectEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MyWeathers" EntityType="Self.MyWeather" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ss222enProjectModel1StoreContainer" CdmEntityContainer="ss222enProjectEntities1">
+          <EntitySetMapping Name="MyWeathers">
+            <EntityTypeMapping TypeName="ss222enProjectModel1.MyWeather">
+              <MappingFragment StoreEntitySet="MyWeather">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="place" ColumnName="place" />
+                <ScalarProperty Name="projectuser" ColumnName="projectuser" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="day1day" ColumnName="day1day" />
+                <ScalarProperty Name="day1temp" ColumnName="day1temp" />
+                <ScalarProperty Name="day2day" ColumnName="day2day" />
+                <ScalarProperty Name="day2temp" ColumnName="day2temp" />
+                <ScalarProperty Name="day3day" ColumnName="day3day" />
+                <ScalarProperty Name="day3temp" ColumnName="day3temp" />
+                <ScalarProperty Name="day4day" ColumnName="day4day" />
+                <ScalarProperty Name="day4temp" ColumnName="day4temp" />
+                <ScalarProperty Name="day5day" ColumnName="day5day" />
+                <ScalarProperty Name="day5temp" ColumnName="day5temp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

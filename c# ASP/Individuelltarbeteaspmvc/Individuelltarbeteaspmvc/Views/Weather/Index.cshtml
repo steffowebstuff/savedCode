@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Individuelltarbeteaspmvc.Models.Weather>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            place
+        </th>
+        <th>
+            longitude
+        </th>
+        <th>
+            latitude
+        </th>
+        <th>
+            day1day
+        </th>
+        <th>
+            day1temp
+        </th>
+        <th>
+            day2day
+        </th>
+        <th>
+            day2temp
+        </th>
+        <th>
+            day3day
+        </th>
+        <th>
+            day3temp
+        </th>
+        <th>
+            day4day
+        </th>
+        <th>
+            day4temp
+        </th>
+        <th>
+            day5day
+        </th>
+        <th>
+            day5temp
+        </th>
+        <th>
+            User
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.place)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.longitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day1day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day1temp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day2day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day2temp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day3day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day3temp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day4day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day4temp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day5day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.day5temp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Väderapplikation.Models.MyPlace>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p class="red">@ViewBag.UserMessage</p>
+
+
+<h2>Index</h2>
+<p>Sök de platser som du vill se vädret på. Du kan välja hur många platser du vill, men bara en och samma plats en gång. Du kan bara välja svenska platser just nu.</p>
+
+<p>
+    @Html.ActionLink("Create New", "NewCreate")
+
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.region)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.region)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "NewDetails", new { id = item.ID }) | <!--Ändring här-->
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,17 @@
+      
+RewriteEngine On
+#htaccess reglerna för webbskrapningsprojektet,
+#Till vänster, hur det skrivs in. Till höger, hur jag vill att det ska tolkas. 
+#Get All Producers
+RewriteRule ^producers$ uppgift2.php
+
+#Get All Producers Position 
+RewriteRule ^producers/position$ uppgift2.php?action=position
+
+#Get Specific Producer Position
+RewriteRule ^producers/([0-9]+)/position$ uppgift2.php?id=$1&action=position
+
+#Get Specific Producer Everything
+RewriteRule ^producers/([0-9]+)$ uppgift2.php?id=$1
+
+

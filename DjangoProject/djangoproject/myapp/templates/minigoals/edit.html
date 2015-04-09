@@ -1,0 +1,24 @@
+{% extends "shared/base.html" %}
+{% block title %}
+	Edit minigoal
+{% endblock %}
+
+<div id="container">
+	{% block content %}
+		{% if minigoal.minigoalOwner == user %}
+			<div id="header">
+				<h1>Edit Minigoal</h1>
+			</div>
+			<p> Owner of the minigoal: {{ minigoal.name }} </p>
+			<p> Name of the minigoal: {{ minigoal.minigoalOwner }} </p>
+			<p> Status of the minigoal: {{ minigoal.minigoalStatus }} </p>
+			<form action="{{minigoal_edit}}" method="POST"> {% csrf_token %} 
+				{{ form.as_p}}
+				<input type="submit" value="Edit Minigoal" />
+			</form>
+		{% else %}
+			<p> No authority here! </p>
+			<p><a href="{% url project_list %}">Get out of here</a></p>
+		{% endif %}
+	{% endblock %}
+</div>

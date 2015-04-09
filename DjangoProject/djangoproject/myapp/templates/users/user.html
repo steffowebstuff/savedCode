@@ -1,0 +1,35 @@
+{% extends 'shared/base.html' %}
+
+
+{% block title %}
+				User page
+{% endblock %}
+
+{% block content %}
+<div id="container">
+<div id="user">
+	<div id="header">
+		<h1>{{user.username}}</h1>
+	</div>
+	<h2> Users projects </h2>
+	<!-- Get the projetcs from this user in the controller-->
+	{%if userProjects.count < 1%}
+		<p>This user does not have any projects yet {{user.userProjects.count}}</p>
+	{% endif %}
+
+	{% for up in userProjects %}
+	<div class="userProject">
+		<p>ProjectName: {{ up.name}} </p>
+		<p>ProjectId: {{ up.id}} </p>
+		<a href="{% url project up.id %}">{{up}}</a>
+	</div>
+	{% endfor %}
+
+	
+
+</div>
+<p><a href="{% url project_add %}">Create new project</a></p>
+<!--<p><a href="{% url user_edit user.id %}">Edit user</a></p>-->
+
+{% endblock %}
+</div>

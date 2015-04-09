@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ss222enProjectModel3StoreContainer" CdmEntityContainer="ss222enProjectEntities5">
+    <EntitySetMapping Name="PlacesExts">
+      <EntityTypeMapping TypeName="ss222enProjectModel3.PlacesExt">
+        <MappingFragment StoreEntitySet="PlacesExt">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="projectuser" ColumnName="projectuser" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="region" ColumnName="region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spDeleteAllPlacesUsername" FunctionName="ss222enProjectModel3.Store.spDeleteAllPlacesUsername" />
+    <FunctionImportMapping FunctionImportName="spGetAllPlacesExtUsername" FunctionName="ss222enProjectModel3.Store.spGetAllPlacesExtUsername">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ss222enProjectModel3.spGetAllPlacesExtUsername_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="projectuser" ColumnName="projectuser" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="region" ColumnName="region" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spGetSpecificPlace" FunctionName="ss222enProjectModel3.Store.spGetSpecificPlace">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ss222enProjectModel3.spGetSpecificPlace_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="projectuser" ColumnName="projectuser" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="region" ColumnName="region" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spInsertPlacesExt" FunctionName="ss222enProjectModel3.Store.spInsertPlacesExt" />
+  </EntityContainerMapping>
+</Mapping>

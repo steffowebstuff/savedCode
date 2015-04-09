@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ss222enProjectModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MyWeather">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="place" Type="nvarchar" MaxLength="255" />
+    <Property Name="projectuser" Type="nvarchar" MaxLength="100" />
+    <Property Name="longitude" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="latitude" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="day1day" Type="datetime" />
+    <Property Name="day1temp" Type="int" />
+    <Property Name="day2day" Type="datetime" />
+    <Property Name="day2temp" Type="int" />
+    <Property Name="day3day" Type="datetime" />
+    <Property Name="day3temp" Type="int" />
+    <Property Name="day4day" Type="datetime" />
+    <Property Name="day4temp" Type="int" />
+    <Property Name="day5day" Type="datetime" />
+    <Property Name="day5temp" Type="int" />
+  </EntityType>
+  <EntityContainer Name="ss222enProjectModel1StoreContainer">
+    <EntitySet Name="MyWeather" EntityType="Self.MyWeather" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

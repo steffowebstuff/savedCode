@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>John Häggerud</LastAuthor>
+  <Created>2012-09-25T13:44:01Z</Created>
+  <LastSaved>2012-09-25T13:48:24Z</LastSaved>
+  <Version>14.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>14060</WindowHeight>
+  <WindowWidth>25040</WindowWidth>
+  <WindowTopX>25540</WindowTopX>
+  <WindowTopY>4100</WindowTopY>
+  <Date1904/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Font ss:FontName="Courier" ss:Color="#000000"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Workbook1.csv">
+  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="79" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="15">
+   <Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="43"/>
+   <Column ss:AutoFitWidth="0" ss:Width="113"/>
+   <Column ss:Index="5" ss:AutoFitWidth="0" ss:Width="220"/>
+   <Row ss:Index="6">
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="String">id</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">latitude</Data></Cell>
+    <Cell><Data ss:Type="String">longitude</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">57.4999</Data></Cell>
+    <Cell><Data ss:Type="Number">15.8280</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="Number">38</Data></Cell>
+    <Cell><Data ss:Type="Number">56.5659</Data></Cell>
+    <Cell><Data ss:Type="Number">16.1380</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="Number">24</Data></Cell>
+    <Cell><Data ss:Type="Number">56.6651</Data></Cell>
+    <Cell><Data ss:Type="Number">16.3347</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">56.9652</Data></Cell>
+    <Cell><Data ss:Type="Number">16.4433</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s62"><Data ss:Type="Number">41</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">57.1256</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">16.9320</Data></Cell>
+    <Cell ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s62"><Data ss:Type="Number">57</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">56.5697</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">16.4203</Data></Cell>
+    <Cell ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s62"><Data ss:Type="Number">36</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">56.4693</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">16.5745</Data></Cell>
+    <Cell ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s62"><Data ss:Type="Number">33</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">56.8778</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">16.6736</Data></Cell>
+    <Cell ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s62"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number"></Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number"></Data></Cell>
+    <Cell ss:StyleID="s62"/>
+   </Row>
+	<Row>
+    <Cell ss:Index="2" ss:StyleID="s62"><Data ss:Type="Number">16</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">57.056</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">14.3438</Data></Cell>
+    <Cell ss:StyleID="s62"/>
+   </Row>
+	<Row>
+    <Cell ss:Index="2" ss:StyleID="s62"><Data ss:Type="Number">56</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">56.1128</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">15.6949</Data></Cell>
+    <Cell ss:StyleID="s62"/>
+   </Row>
+	<Row>
+    <Cell ss:Index="2" ss:StyleID="s62"><Data ss:Type="Number">19</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">57.056</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="Number">14.3438</Data></Cell>
+    <Cell ss:StyleID="s62"/>
+   </Row>
+   <Row ss:Index="21">
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row ss:Index="27">
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row ss:Index="39">
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row ss:Index="41">
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row ss:Index="44">
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row ss:Index="48">
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row ss:Index="59">
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:StyleID="s62"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
+   <TopRowVisible>4</TopRowVisible>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>8</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+     <RangeSelection>R9C2:R19C4</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

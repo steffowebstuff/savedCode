@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    
+    <!-- Testing Ajax-->
+    <!--
+    var ajaxOptions = new AjaxOptions
+    {
+        InsertionMode = System.Web.Mvc.Ajax.InsertionMode.InsertAfter,
+        UpdateTargetId = "result"
+    };
+    -->
+}
+<!--<body onload="myFunction()">-->
+<h2>@ViewBag.Message</h2>
+<p>
+    Det är här man ska se alternativen på förstasidan.
+</p>
+
+
+@Html.ActionLink("go to form", "PlaceInput")
+
+<!-- Testing Ajax-->
+@Html.ActionLink("go to ajaxTest", "TestingAjax")
+
+
+<div id="result">
+    @Model
+</div>
+
+@section ScriptBodyEnd{
+ <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+ <script src="@Url.Content("~/Scripts/myScript.js")" type="text/javascript"></script>
+}

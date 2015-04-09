@@ -1,0 +1,30 @@
+﻿@model Individuelltarbeteaspmvc.Models.NewUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>NewUser</legend>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">token</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.token)
+    </div>
+
+    <div class="display-label">link</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.link)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

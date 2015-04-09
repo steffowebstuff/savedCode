@@ -1,0 +1,91 @@
+﻿@model Väderapplikation.Models.ExtWeather
+
+@{
+    ViewBag.Title = "Details";
+}
+<p>@ViewBag.UserMessage</p>
+@{var weeklength = 5;}
+
+<input id="mytextbox" type="hidden" name="textbox" value="@ViewBag.latitude.ToString()" />
+<input id="mytextbox2" type="hidden" name="textbox" value="@ViewBag.longitude.ToString()" />
+
+<h2>Vädret för @Model.placeName.ToString() denna vecka</h2>
+
+
+<!--Ersätt om möjligt detta med en loop-->
+<div id="weathertablediv">
+    <table border="1">
+        <tr>
+            <!--Konvertera till bara dag-format-->
+            <th>Idag</th> <!--Ta bort det innanför paranteserna om du vill se exakta tider-->
+            <th>Imorgon</th>
+            <th>@Model.Day3day.ToString("dddd", new System.Globalization.CultureInfo("sv-SE"))</th>
+            <th>@Model.Day4day.ToString("dddd", new System.Globalization.CultureInfo("sv-SE"))</th>
+            <th>@Model.Day5day.ToString("dddd", new System.Globalization.CultureInfo("sv-SE"))</th>
+        </tr>
+        <tr>
+            <td>@Model.Day1temp.ToString()</td>
+            <td>@Model.Day2temp.ToString()</td>
+            <td>@Model.Day3temp.ToString()</td>
+            <td>@Model.Day4temp.ToString()</td>
+            <td>@Model.Day5temp.ToString()</td>
+        </tr>
+     
+        <tr>
+            <td><img src="../../../Content/themes/base/images/@(Model.Day1Weather.ToString()).png" alt="@Model.Day1Weather.ToString()" height="42" width="42"> </td>
+            <td><img src="../../../Content/themes/base/images/@(Model.Day2Weather.ToString()).png" alt="@Model.Day2Weather.ToString()" height="42" width="42"> </td>
+            <td><img src="../../../Content/themes/base/images/@(Model.Day3Weather.ToString()).png" alt="@Model.Day3Weather.ToString()" height="42" width="42"> </td>
+            <td><img src="../../../Content/themes/base/images/@(Model.Day4Weather.ToString()).png" alt="@Model.Day4Weather.ToString()" height="42" width="42"> </td>
+            <td><img src="../../../Content/themes/base/images/@(Model.Day5Weather.ToString()).png" alt="@Model.Day5Weather.ToString()" height="42" width="42"> </td>
+        </tr>
+    </table>
+</div>
+
+<div id="mapdiv" style="width:400px;height:400px;"><!--Flytta in i css-filen-->
+    <!--<p>Kartan visas över platsen som användaren har valt</p>-->
+</div>
+
+
+<p>
+    @Html.ActionLink("Tillbaka till listan", "Index") |
+    @Html.ActionLink("Skapa ny?", "NewCreate")
+</p>
+
+<script>
+
+    //Sätt igång en loop som placerar in sökningen i localstorage, värdet ska vara platsen som sökts och nyckeln ska vara användarens username plus siffran.
+    //Förhoppningsvis går det att använda en array till det här.
+
+
+    function initialize() {
+
+        var textbox = document.getElementById("mytextbox");
+        var myvalue = textbox.value;
+        var mynewvalue = myvalue.replace(/,/g, '.');
+        var textbox2 = document.getElementById("mytextbox2");
+        var myvalue2 = textbox2.value;
+        var mynewvalue2 = myvalue2.replace(/,/g, '.');
+        var myCenter = new google.maps.LatLng(mynewvalue, mynewvalue2);
+
+        var mapProp = {
+            center: myCenter,
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("mapdiv"), mapProp);
+
+        var marker = new google.maps.Marker({
+            position: myCenter,
+        });
+
+        marker.setMap(map);
+    }
+    //Local storage går igång redan vid första postningen och fylls sedan på vid varje nu hämtning.
+    //Skriptet går så länge man befinner sig på sidan. Varje gång användaren trycker på sök-knappen så hamnar sökningen i local storage.
+    //Värdet är innehållet i sökrutan, nyckeln är ett nummer. Se om attributet length finns som gör att man kan hämta längden på local storage innan man sätter värdet.
+    //Vid varje laddning av sidan hämtar scriptet ut allt innehåll som man har lagt i local storage och lägger det i en länklista bredvid kartan.
+    //Det ska även finnas en clearknapp som rensar local storage.
+
+</script>
+

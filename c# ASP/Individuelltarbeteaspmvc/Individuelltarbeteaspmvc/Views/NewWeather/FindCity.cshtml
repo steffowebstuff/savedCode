@@ -1,0 +1,84 @@
+﻿@model Individuelltarbeteaspmvc.Models.ViewModel
+
+@{
+    ViewBag.Title = "FindCity";
+}
+
+<h2>FindCity</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<!--<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>-->
+
+
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>ViewModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.place)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.place)
+            @Html.ValidationMessageFor(model => model.place)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Crud-hanteringen av vädret", "Index")
+</div>
+
+<p>Testar autocomplete</p>
+<div class="ui-widget">
+    <label for="tags">Tags: </label>
+    <input id="tags">
+</div>
+
+
+
+<!--//För offline web applications, kolla på youtube efter html web apps typ 7 min in i videon.
+    /**
+    1. Skapa en manifestsidan som visar vilka filer som ska laddas, länka sedan in scriptet i html-sidan. Notera taggen <html manifest"filnamn"> i html-sidan.
+    2. Bestäm vilka sql-satser som ska användas och skriv dem på ett sätt så att databasen kan förstå dem
+    3. Presentera texten på sidan, skriv dock först ner exakt vad det är som ska ligga på offline web applications. 
+    */
+     -->
+
+
+<script>
+
+   
+    /*
+    Available tags ska ersättas med en json-lista med tillgängliga städer i yr.no - registret
+   Se om du kan hitta en lista på yr.no som visar vilka platser som finns tillgängliga. I annat fall får du hårdkoda in alla sveriges kommuner här i listan.
+     string requestUristring = String.Format(at"http://www.yr.no/place/Sweden/stockholm/{0}/forecast.xml", place); //ersätt at med det riktiga tecknet.
+     Antagligen behövs en lista som hämtar länet till den ort som användaren har skrivit in för att sedan skriva in det i url-strängen.
+    Se om den listan finns i antingen geolocations (mer troligt) eller i yr.no, annars blir det till att hårdkoda en hjälpfunktion
+    Funktionen fungerar men den uppför sig lite konstigt och blir en punktlista istället för drop down meny, dessutom står det att en funktion saknas.
+    */
+    $(function () {
+
+        
+            var availableTags = [
+                "ActionScript",
+                "AppleScript",
+                "Asp",
+                "BASIC"
+            ];
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+        
+   });
+
+    
+
+    
+</script>

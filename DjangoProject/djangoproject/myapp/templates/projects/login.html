@@ -1,0 +1,21 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}
+				Login page
+{% endblock %}
+
+
+
+{% block content %}
+<h1>Login Page</h1>
+<h1>{{loginmessage}}</h1>
+	<form action="{{login_user}}" method="POST"> {% csrf_token %} 
+		{{ form.as_p}}
+		<input type="submit" value="Login" />
+	</form>
+	{{ message }}
+{% endblock %}
+
+
+
+<!--<p>Not member? <a href="{% url user_add %}">Click here</a></p>-->

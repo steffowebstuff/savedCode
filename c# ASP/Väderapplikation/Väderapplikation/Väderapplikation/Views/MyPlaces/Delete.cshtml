@@ -1,0 +1,23 @@
+﻿@model Väderapplikation.Models.MyPlace
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Ta bort plats</h2>
+
+<h3>Vill du ta bort den här platsen från din lista?</h3>
+    <h3>Plats</h3>
+    <p>@Html.DisplayFor(model => model.place)</p>
+
+    <h3>Region</h3>
+    <p>@Html.DisplayFor(model => model.region)</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Tillbaka till index", "Index")
+    </p>
+}

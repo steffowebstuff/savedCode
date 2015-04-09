@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="User" EntityType="Model.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Weather" EntityType="Model.Store.Weather" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="Weather_OwnerNew_fk" Association="Model.Store.Weather_OwnerNew_fk">
+      <End Role="User" EntitySet="User" />
+      <End Role="Weather" EntitySet="Weather" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="token" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="link" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="place" Type="nvarchar" MaxLength="255" />
+    <Property Name="longitude" Type="int" />
+    <Property Name="latitude" Type="int" />
+    <Property Name="day1day" Type="date" />
+    <Property Name="day1temp" Type="int" />
+    <Property Name="day2day" Type="date" />
+    <Property Name="day2temp" Type="int" />
+    <Property Name="day3day" Type="date" />
+    <Property Name="day3temp" Type="int" />
+    <Property Name="day4day" Type="date" />
+    <Property Name="day4temp" Type="int" />
+    <Property Name="day5day" Type="date" />
+    <Property Name="day5temp" Type="int" />
+    <Property Name="owner" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Weather_OwnerNew_fk">
+    <End Role="User" Type="Model.Store.User" Multiplicity="1" />
+    <End Role="Weather" Type="Model.Store.Weather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Weather">
+        <PropertyRef Name="owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,21 @@
+{% extends "shared/base.html" %}
+
+{% block title %}
+	Edit project
+{% endblock %}
+
+{% block content %}
+	{% if project.added_by_user == user %}
+		<h1>Edit page</h1>
+		<p> Name of the project: {{ project.name }} </p>
+		<p> Owner of the project: {{ project.added_by_user }} </p>
+		<form action="{{project_edit}}" method="POST"> {% csrf_token %} 
+			{{ form.as_p}}
+			<input type="submit" value="Edit Project" />
+		</form>
+		
+	{% else %}
+		<p> No authority here! </p>
+		<p><a href="{% url project_list %}">Get out of here</a></p>
+	{% endif %}
+{% endblock %}
