@@ -1,0 +1,84 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+ul
+{
+list-style-type: none;
+}
+
+a:link 
+{
+	text-decoration:none;
+}
+
+a:visited {
+	color:purple;
+}
+
+a:hover {
+	color:white;
+}
+
+
+.right {float:right; margin:0px 0 5px 15px;}
+
+.redImage{
+	height:20px;
+	width:20px;
+}
+
+
+.message a{
+}
+
+.message{
+	border:1px solid black;
+	color: blue;
+}
+
+#Container {
+	position:relative;
+	margin:0px auto;
+}
+#Header{
+	background:silver;
+}
+
+
+#RightColumn{
+	background:lightblue;
+	height:100%;
+	width: 180px;
+	float: right;
+}
+
+#RightColumn a
+{
+	text-align:left;
+}
+
+#messagesArea{
+	background:silver;
+	top: 20px;
+	border: 1px solid black;
+}
+
+#formArea{
+	background:grey;
+}
+
+
+#Footer{
+	background:silver;
+	clear:both;
+}
+
+#Footer a{
+	text-align:right;
+	float:right;
+}
+
+#Footer p{
+	text-align:center;
+}
