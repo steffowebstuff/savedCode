@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/errordisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/colorinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/colorrules" />
+
+        <TextView
+            android:id="@+id/rlable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/red" />
+
+        <EditText
+            android:id="@+id/rinput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            android:text="10" />
+
+        <TextView
+            android:id="@+id/blable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blue" />
+
+        <EditText
+            android:id="@+id/binput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            android:text="10" />
+
+        <TextView
+            android:id="@+id/glable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/green" />
+
+        <EditText
+            android:id="@+id/ginput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            android:text="10" />
+
+
+
+        <TextView
+            android:id="@+id/slable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/size" />
+
+        <EditText
+            android:id="@+id/sinput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            android:text="10" />
+        
+        <TextView
+            android:id="@+id/sortlable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_rules" />
+
+        <CheckBox
+            android:id="@+id/redfont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/red_font_colour" />
+
+        <CheckBox
+            android:id="@+id/cbsort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_asc" />
+
+        <CheckBox
+            android:id="@+id/cborder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_order" />
+
+        <Button
+            android:id="@+id/sendbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send" />
+    </LinearLayout>
+
+</ScrollView>

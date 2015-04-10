@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/main_widget"
+    android:label="AWeather"
+    android:minHeight="80dp"
+    android:minWidth="110dp"
+    android:maxHeight="80dp"
+    android:maxWidth="110dp"
+    android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="1800000" android:configure="com.example.thirdassignment.WeatherConfiguration">
+</appwidget-provider>

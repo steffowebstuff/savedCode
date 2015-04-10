@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/errordisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/countrylable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_country" />
+    
+    
+
+    <EditText
+        android:id="@+id/countryinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="@string/no_country"
+        >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/yearlable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_year" />
+
+    <EditText
+        android:id="@+id/yearinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:inputType="number"
+        android:maxLength="4"
+        android:text="0"
+        />
+   <!--   <EditText
+        android:id="@+id/idinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:inputType="number"
+        />-->
+    
+    <TextView
+        android:id="@+id/idfield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+    
+    <!--  <CheckBox
+        android:id="@+id/deletecountrybox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Just delete the country instead" />-->
+  
+
+    <Button
+        android:id="@+id/sendbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send" />
+
+</LinearLayout>

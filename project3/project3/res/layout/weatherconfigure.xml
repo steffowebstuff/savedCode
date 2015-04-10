@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/widgetSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="" />
+
+    <RadioGroup
+        android:id="@+id/rbs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="54dp" >
+
+        <RadioButton
+            android:id="@+id/stockholmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <RadioButton
+            android:id="@+id/vaxjoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_marginTop="36dp"
+            android:checked="true"
+            android:text="växjö" />
+
+        <RadioButton
+            android:id="@+id/kalmarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="105dp"
+            android:layout_marginBottom="54dp"
+            android:text="" />
+    </RadioGroup>
+
+</RelativeLayout><!-- Todo, make this layout look better -->

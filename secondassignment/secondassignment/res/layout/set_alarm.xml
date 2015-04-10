@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/errordisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <!--  <CalendarView
+            android:id="@+id/calendarView1"
+            android:layout_width="match_parent"
+            android:layout_height="198dp" />-->
+
+        <TimePicker
+            android:id="@+id/timePicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <DatePicker
+            android:id="@+id/datePicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+      <!--  <TextView
+            android:id="@+id/monthlable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_month" />
+
+        
+
+        <EditText
+            android:id="@+id/monthfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/daylable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_day" />
+
+        <EditText
+            android:id="@+id/dayfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/hourlable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_hour" />
+
+        <EditText
+            android:id="@+id/hourfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/minutelable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_minute" />
+
+        <EditText
+            android:id="@+id/minutefield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number" />-->
+
+        <!--
+    <TextView
+        android:id="@+id/rlable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="red" />
+
+    <EditText
+        android:id="@+id/rinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:inputType="number"
+        />
+    <TextView
+        android:id="@+id/blable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="blue" />
+
+    <EditText
+        android:id="@+id/binput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:inputType="number"
+        />
+    <TextView
+        android:id="@+id/glable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="green" />
+
+    <EditText
+        android:id="@+id/ginput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:inputType="number"
+        />
+    <TextView
+        android:id="@+id/slable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="green" />
+
+    <EditText
+        android:id="@+id/sinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:inputType="number"
+        />
+        -->
+
+        <Button
+            android:id="@+id/sendbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send" />
+    </LinearLayout>
+
+</ScrollView>

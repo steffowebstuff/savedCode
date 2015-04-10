@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    >
+
+    <TextView
+        android:id="@+id/errordisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+    <TextView
+        android:id="@+id/PlayerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/this_mp3_player" />
+    
+    <Button
+        android:id="@+id/playbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start" />
+    <Button
+        android:id="@+id/stopbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--" />
+    <Button
+        android:id="@+id/forwardbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--" />
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--" />
+     <Button
+        android:id="@+id/infobutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--" />
+
+</LinearLayout>

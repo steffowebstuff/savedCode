@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">thirdassignment</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="update_text">Update Widget</string>
+    <string name="enter_number">Enter number</string>
+    <string name="send_message">Send Message</string>
+    <string name="stockholm">stockholm</string>
+    <string name="kalmar">kalmar</string>
+    <string name="select">select</string>
+    <string name="kiruna">kiruna</string>
+    <string name="halmstad">halmstad</string>
+
+</resources>
