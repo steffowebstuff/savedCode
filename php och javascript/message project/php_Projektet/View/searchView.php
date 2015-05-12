@@ -3,14 +3,13 @@
 class SearchView{
 		
 	const NoMessages = "Inga meddelanden hittades";
-	
 	private $searchInput = "searchInput";
 	private $searchButton = "searchButton";
 
 	public function SearchForm(){
 		return '<form action="index.php?'.NavigationView::action.'='.action::SEARCHED.'" method="post">
 		Sök <input type="text" name="'.$this->searchInput.'" />
-		 <input type="submit" name="'.$this->searchButton.'" value="Skicka" />
+		<input type="submit" name="'.$this->searchButton.'" value="Skicka" />
 	    </form>';
 	}
 	
@@ -38,16 +37,16 @@ class SearchView{
 	  	}
 		$body = self::NoMessages;
 		return $body;
-	 }
+	}
 	  
-	  public function StandardMessage($message){
+	public function StandardMessage($message){
 	  	return
 	  	"<div class='Message'>
 	  		<br />
 	  		<p>Användare ".$message['Sender']." till ".$message['Receiver'] ."med innehållet ".$message['Content']."</p>
 	  	</div>
 	  	"; 
-	  } 	
+	} 	
 	  
 	
 }

@@ -40,16 +40,14 @@ class WriteMessageHandler{
 	}
 	
 	
-	//Kan eventuellt fixas en funktion som blockerar meddelanden som skickas till en fiende.  
 	public function SaveWrittenMessage($sender, $receiver, $content){
-		//Ta in enemies som en fjärde inparameter. Om den finns inuti enemies så ska inte meddelandet kunna skickas och felmeddelande göras. 
-		$messages3 = $this->messages3;
-        $sql = "INSERT INTO " . $messages3 . "(Sender, Receiver, Content) VALUES(?, ?, ?)"; 
-        $stmt = $this->m_mysqli->prepare($sql);
-       
-        $stmt->bind_param("iis", $sender, $receiver, $content);
-        $stmt->execute();
-        $stmt->close();
+			$messages3 = $this->messages3;
+			$sql = "INSERT INTO " . $messages3 . "(Sender, Receiver, Content) VALUES(?, ?, ?)"; 
+			$stmt = $this->m_mysqli->prepare($sql);
+		   
+			$stmt->bind_param("iis", $sender, $receiver, $content);
+			$stmt->execute();
+			$stmt->close();
 				
 	}
 

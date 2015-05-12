@@ -50,8 +50,7 @@ class LoginView {
 		{
 			return $_COOKIE[$this->Username];
 		}
-		return null;
-			
+		return null;			
 	}
 	
 	public function getPwCookie(){
@@ -59,19 +58,18 @@ class LoginView {
 		{
 			return $_COOKIE[$this->Password];
 		}
-		return null;
-			
+		return null;			
 	}
 	
 		
 	public function rememberMe(){
 		if (isset( $_GET[$this->Remember])) {      
 		      return $_GET[$this->Remember];
-		    }
-			else {
-				return null;
-			}				
 		}
+		else {
+			return null;
+		}				
+	}
 			
 	public function DoLoginBox() {
 		//Den här ska ändras till post.		
@@ -91,7 +89,7 @@ class LoginView {
 	   ;
   	}
   
-	 public function DoLogoutBox() {
+	public function DoLogoutBox() {
 	   return '
 		   <div class="formArea">
 		   <form name="input"  method="get">
@@ -99,60 +97,53 @@ class LoginView {
 		   </form>
 	   </div>
 	   ';
-	 }
+	}
   
-	  public function RemoveButton() {
+	public function RemoveButton() {
 	    return '<form name="input"  method="get">
 	    <input type="submit" name="RemoveButton" value="Ta bort medlem" />
 	    </form>';
-	  }
-	
+	}
 	 
-	 
-	   
-	  public function RemoveUser(){
-	  	// returnerar en sträng med det som användaren skrivit i användarnamnsfältet eller NULL ifall användaren inte fyllt i något där.
+	public function RemoveUser(){
 	  	if (isset( $_GET[$this->RemoveButton])) {
-	      self::removeUserMessage; //Kontrollera att den här inte blir fel. 
-	      return $_GET[$this->RemoveButton];
+			self::removeUserMessage; 
+			return $_GET[$this->RemoveButton];
 	    }
 		return null;
-	  }
+	}
 	  
-	  public function GetUserName(){
-	  	if (isset( $_GET[$this->Username])) {
-	      
-	      return $_GET[$this->Username];
+	public function GetUserName(){
+	  	if (isset( $_GET[$this->Username])) {	      
+			return $_GET[$this->Username];
 	    }
 		return null;
-	  }
-	  public function GetPassword(){
+	}
+	  
+	public function GetPassword(){
 	  	if (isset( $_GET[$this->Password])) {
 	      
 	      return $_GET[$this->Password];
 	 	}
 		return null;
-	  }
+	}
 	  
-	  public function TriedToLogIn(){
-	  	if (isset( $_GET[$this->LoginButton]) ) {
-	      
-	      return true;
+	public function TriedToLogIn(){
+		if (isset( $_GET[$this->LoginButton]) ) { 
+			return true;
 		}
 		return false;
-	  }
-	  public function TriedToLogOut(){
-	  	if (isset( $_GET[$this->LogoutButton])) {
-	      
-	      return true;
+	}
+	public function TriedToLogOut(){
+		if (isset( $_GET[$this->LogoutButton])) {
+			return true;
 		}
 		return false;
-	  }
+	}
 	  
-	  public function PersonalInformation($userInput){
-	  	return"<p>Användarnamnet är $userInput</p>  
-	  	";
-	  }	 
+	public function PersonalInformation($userInput){
+		return"<p>Användarnamnet är $userInput</p>";
+	}	 
 	  
 }
   

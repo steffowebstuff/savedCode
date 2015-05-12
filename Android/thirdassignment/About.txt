@@ -1,0 +1,1 @@
+This applications contains three projects. An application that collect phone calls and handle it in various ways, A couple av Google Maps related projects and a widget project that collects weather from Yr.no

@@ -1,6 +1,4 @@
-/**
- * @author Administrator
- */
+
  //Javascriptklass för validering av formulär
 var validering = {
     init: function () {

@@ -20,8 +20,7 @@ class WriteMessageView{
 	}
 	
 	public function HasSentMessage(){
-	  	if (isset( $_POST[$this->Content])) {
-	      
+	  	if(isset( $_POST[$this->Content])) {	      
 	      return true;
 	    }
 		return self::SentMessage;
@@ -61,8 +60,7 @@ class WriteMessageView{
 	  public function MemberShow($member, $isFriend = true){
 	  	return"<div class='Member'>  	
 	  		<p>Användaren ".$member['Username']."<img class='redImage' src=".$this->FriendPicture($isFriend)."></p>
-	  		</div>
-	  	";
+	  		</div>";
 	  }  
 	  
 	 

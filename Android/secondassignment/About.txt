@@ -1,0 +1,1 @@
+This application contains three projects. An Alarm clock, A Mp3 player and a CRUD application for countries.
