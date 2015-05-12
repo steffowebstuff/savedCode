@@ -128,14 +128,7 @@ public class Maps extends FragmentActivity {
 			}
 
 			
-			/* Tried to implement method for checking airplane mode here but ran out of time before I hade the time to the proper tests on it
-			Intent intent = getIntent();
-			if (intent.getAction().equals(Intent.ACTION_AIRPLANE_MODE_CHANGED)) {
-				Toast.makeText(getApplicationContext(),
-						"Problem receiving data because of air plane mode", Toast.LENGTH_SHORT)
-						.show();
-
-			}*/
+		
 			AsyncTask task = new KmlRetriever(ready).execute(url);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block

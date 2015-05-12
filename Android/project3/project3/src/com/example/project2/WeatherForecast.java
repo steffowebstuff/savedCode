@@ -1,3 +1,4 @@
+//Code added by teacher required to use for project
 /**
  * WeatherForecast.java
  * Created: May 9, 2010

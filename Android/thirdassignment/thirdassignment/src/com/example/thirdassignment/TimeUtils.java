@@ -1,3 +1,4 @@
+//Class added by teacher as a required file to use for the project
 /**
  * TimeUtils.java
  * Created: May 9, 2010

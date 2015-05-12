@@ -6,7 +6,7 @@
 package com.example.project2;
 
 import android.text.format.Time;
-
+//Class added by teacher as a required file to use for the project
 /**
  * @author jlnmsi
  *
