@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">project2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="chk_pol">Politics</string>
+    <string name="chk_eco">Economy</string>
+    <string name="welcome">Welcome to the Rss reader. The widget AWidget has just been created on your device!</string>
+
+</resources>
